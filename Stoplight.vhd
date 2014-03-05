@@ -66,8 +66,11 @@ begin
 			end if;
 		when yellow =>
 			next_state <= red;
+		when others =>
+			next_state <= red;
 	end case;
 end process;
+
 
 
 
