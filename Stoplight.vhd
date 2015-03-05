@@ -1,20 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: USAFA/DFEC
+-- Engineer: Ryan J. Silva
 -- 
 -- Create Date:    11:05:47 03/06/2013 
--- Design Name: 
+-- Design Name: Stoplight example
 -- Module Name:    Stoplight - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Project Name:  Classwork
+-- Description:  This module is a great example for showing case statements and state machine implmentation
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments: Updated header, deleted some space.  V Trimble 5 Mar 2015
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -44,11 +38,9 @@ type stoplight_state is (red, green, yellow);
 signal next_state, current_state : stoplight_state;
 
 begin
-
 ------------------
 --Next State Logic
 ------------------
-
 process (C, current_state)
 begin
 	case current_state is
@@ -71,9 +63,6 @@ begin
 	end case;
 end process;
 
-
-
-
 ---------------------
 --State Memory
 ---------------------
@@ -91,12 +80,9 @@ end  process;
 --Output Logic
 --------------------
 
-R <= 	'1' when current_state = red else
-		'0';
-G <=	'1' when current_state = green else
-		'0';
-Y <= 	'1' when current_state = yellow else
-		'0';
+R <= 	'1' when current_state = red else '0';
+G <=	'1' when current_state = green else '0';
+Y <= 	'1' when current_state = yellow else '0';
 	
 end Behavioral;
 
